@@ -1,0 +1,93 @@
+# ---------- Read Me ------------
+# When modifying this document, add comments indicating author, rational, and other team-member votes.
+# example:
+#
+# Style/RedundantPercentQ:  # author: agd, +1: mm, -1: jde
+#   Enabled: false          # rationale: %Q/q increases readability of strings containing quotes
+#
+# Quarterly, dev team will review; this will assist expedience of reviews. Vote scores will help determine
+# which directives require review. Developer initials will help future iterations of team decide which
+# directives to re-assess
+# ---------- Read Me ------------
+
+inherit_mode:
+  merge:
+    - Exclude
+    - Include
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - '**/db/**/*'
+    - '**/config/**'
+    - '**/script/**'
+Bundler/OrderedGems:
+  Enabled: false
+Style/EmptyCaseCondition: # author: agd
+  Enabled: false          # rationale: trivial; case is a valid snytactic alternative to elsif
+Style/RedundantPercentQ:  # author: agd, :+1 mm
+  Enabled: false          # rationale: %Q/q increases readability of strings containing quotes
+Layout/DotPosition:
+  Enabled: false
+Layout/EmptyLines:
+  Enabled: false
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+Layout/HashAlignment:
+  Enabled: false
+Layout/LineLength:
+  Enabled: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - 'config/routes.rb'
+    - 'config/routes/*'
+    - 'Gemfile'
+    - '**/db/**/*'
+    - '**/test/**/*'
+    - '**/spec/**/*'
+Metrics/ClassLength:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Naming/PredicateName:
+  Enabled: false
+Naming/MethodParameterName:
+  AllowedNames:
+    cc
+Style/BracesAroundHashParameters:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/HashSyntax:
+  Enabled: false
+Style/NumericLiterals:
+  Enabled: true
+  Exclude:
+    - '**/test/**/*'
+    - '**/spec/**/*'
+Style/CommentedKeyword:
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false
+Style/TernaryParentheses:
+  Enabled: true
+  EnforcedStyle: 'require_parentheses_when_complex'
+Style/TrailingCommaInArguments:
+  Enabled: false
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+Style/TrailingUnderscoreVariable:
+  Enabled: false
+Style/TrivialAccessors:
+  Enabled: false
+  IgnoreClassMethods: true

@@ -1,3 +1,17 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'visitors#welcome'
+
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
+  get 'sessions/failure'
+  resources :users
+
+  get 'visitors/welcome'
+  get '/auth/:provider/callback' => 'sessions#create'
+  get '/signin' => 'sessions#new', :as => :signin
+  get '/signout' => 'sessions#destroy', :as => :signout
+  get '/auth/failure' => 'sessions#failure'
 end
